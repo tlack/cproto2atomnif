@@ -1,14 +1,15 @@
 cproto2atomnif
 ==============
 
-Plug existing C code into your [AtomVM](https://github.com/bettio/AtomVM) applications quickly and easily.
+Plug existing C code into your [AtomVM](https://github.com/bettio/AtomVM) 
+applications quickly and easily.
 
 cproto2atomnif is a Python script that reads C prototype header files and spits
 out code to use them from inside Erlang or Elixir on AtomVM.
 
-The process of creating these so-called AtomVM nifs is straightforward,
-but there is a lot of boilerplate involved. This script automates that by
-creating the C source code for the AtomVM nif component.
+The process of creating these AtomVM nifs is very straightforward, but there 
+is a lot of boilerplate involved. This script automates that by creating the 
+C source code for the AtomVM nif component.
 
 You still need to edit the resulting code to add your specific validation
 logic, etc.
@@ -69,8 +70,9 @@ $ cat testlib.c
 
 # status
 
+- Does NOT support precompiler macros, or real `.h` files. You must simplify your prototypes before use!
 - Rough, barbarian-style first draft
-- Supports only `int`, `float`, and `char*` (as beam binaries).
+- Supports only `int` (of various kinds), `float`/`double`, and `char*`/`uint8_t*` (as beam binaries).
 - Very crude regular expression-based parser; should switch to `pyclanguage`
 - Would be cool to have more config options, or any config options.
 
