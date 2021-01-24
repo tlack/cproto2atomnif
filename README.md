@@ -81,6 +81,14 @@ Now compile and burn your firmware and scripts to the device, and the following 
 - Would be cool to have more config options, or any config options.
 - Needs docs; see test.py for some ideas about what it supports
 
+# note on c++
+
+To call C++ from a ESP-IDF toolkit component, which is C, the C++ code will need to declare
+the target function with `extern "C"` at the site of the definition (not the prototype).
+
+Furthermore, neither C nor this tool understand class method invocation, so your
+prototypes used with cproto2atomnif should only refer to `thing_do_blah`, not `Thing.do_blah`.
+
 # motivation
 
 There is a lot of existing Arduino code that I need to call from Erlang code
