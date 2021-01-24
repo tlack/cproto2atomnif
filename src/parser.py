@@ -97,7 +97,7 @@ def parse_line(n, line, modname):
         g['args'] = parse_args(n, args_str)
         g['arity'] = len(g['args'])
 
-        print('->', line, '\n<-', g)
+        print('// ->', line, '\n<-', g)
         return g
     else:
         print(f'WARNING: line {n}: could not parse prototype at all: "{line}"')
