@@ -68,6 +68,10 @@ $ cat testlib.c
 
 ```
 
+Now compile and burn your firmware and scripts to the device, and the following should work:
+
+```X = testlib:add(5, 7)```
+
 # status
 
 - Does NOT support precompiler macros, or real `.h` files. You must simplify your prototypes before use!
