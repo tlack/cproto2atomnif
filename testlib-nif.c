@@ -1,18 +1,23 @@
-parsing line #0: void nothing();
--> void nothing(); 
-<- {'args_raw': None, 'modname': 'testlib', 'returns': 'void', 'func': 'nothing', 'args': [], 'arity': 0}
-parsing line #1: void nothing2(int a);
--> void nothing2(int a); 
-<- {'args_raw': 'int a', 'modname': 'testlib', 'returns': 'void', 'func': 'nothing2', 'args': [{'access': '', 'type': 'int', 'argname': 'a', 'modifiers': '', 'position': 0}], 'arity': 1}
-parsing line #2: int add(int a, int b);
--> int add(int a, int b); 
-<- {'args_raw': 'int a, int b', 'modname': 'testlib', 'returns': 'int', 'func': 'add', 'args': [{'access': '', 'type': 'int', 'argname': 'a', 'modifiers': '', 'position': 0}, {'access': '', 'type': 'int', 'argname': 'b', 'modifiers': '', 'position': 1}], 'arity': 2}
-parsing line #3: float addf(float a, float b);
--> float addf(float a, float b); 
-<- {'args_raw': 'float a, float b', 'modname': 'testlib', 'returns': 'float', 'func': 'addf', 'args': [{'access': '', 'type': 'float', 'argname': 'a', 'modifiers': '', 'position': 0}, {'access': '', 'type': 'float', 'argname': 'b', 'modifiers': '', 'position': 1}], 'arity': 2}
-parsing line #4: char* reverse(char* blah);
--> char* reverse(char* blah); 
-<- {'args_raw': 'char* blah', 'modname': 'testlib', 'returns': 'char*', 'func': 'reverse', 'args': [{'access': '', 'type': 'char*', 'argname': 'blah', 'modifiers': '', 'position': 0}], 'arity': 1}
+// line #0
+// proto void nothing();
+// parsed: {'args_raw': None, 'modname': 'testlib', 'returns': 'void', 'func': 'nothing', 'args': [], 'arity': 0}
+
+// line #1
+// proto void nothing2(int a);
+// parsed: {'args_raw': 'int a', 'modname': 'testlib', 'returns': 'void', 'func': 'nothing2', 'args': [{'access': '', 'type': 'int', 'argname': 'a', 'modifiers': '', 'position': 0}], 'arity': 1}
+
+// line #2
+// proto int add(int a, int b);
+// parsed: {'args_raw': 'int a, int b', 'modname': 'testlib', 'returns': 'int', 'func': 'add', 'args': [{'access': '', 'type': 'int', 'argname': 'a', 'modifiers': '', 'position': 0}, {'access': '', 'type': 'int', 'argname': 'b', 'modifiers': '', 'position': 1}], 'arity': 2}
+
+// line #3
+// proto float addf(float a, float b);
+// parsed: {'args_raw': 'float a, float b', 'modname': 'testlib', 'returns': 'float', 'func': 'addf', 'args': [{'access': '', 'type': 'float', 'argname': 'a', 'modifiers': '', 'position': 0}, {'access': '', 'type': 'float', 'argname': 'b', 'modifiers': '', 'position': 1}], 'arity': 2}
+
+// line #4
+// proto char* reverse(char* blah);
+// parsed: {'args_raw': 'char* blah', 'modname': 'testlib', 'returns': 'char*', 'func': 'reverse', 'args': [{'access': '', 'type': 'char*', 'argname': 'blah', 'modifiers': '', 'position': 0}], 'arity': 1}
+
 
     #include "freertos/FreeRTOS.h"
     #include "freertos/task.h"
@@ -33,7 +38,6 @@ parsing line #4: char* reverse(char* blah);
         
         nothing();
         return ATOM_OK;
-        
     }
     static const struct Nif testlib_nothing_nif_info = 
     {
@@ -51,7 +55,6 @@ parsing line #4: char* reverse(char* blah);
         int a = (int)term_to_int(argv[0]);
         nothing2(a);
         return ATOM_OK;
-        
     }
     static const struct Nif testlib_nothing2_nif_info = 
     {

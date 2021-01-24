@@ -25,8 +25,7 @@ def build_exec(proto):
 def build_return_value(proto):
     if proto['returns'] == 'void':
         return """
-        return ATOM_OK;
-        """;
+        return ATOM_OK;""";
     else:
         ifc = types.get_interface(proto['returns'])
         if ifc:

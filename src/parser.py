@@ -65,7 +65,6 @@ def parse_line(n, line, modname):
     line = line.strip()
     if line == '': return None
 
-    print(f'parsing line #{n}: {line}')
     proto_re_str = '''
         \s*
         # get the return type
@@ -97,7 +96,7 @@ def parse_line(n, line, modname):
         g['args'] = parse_args(n, args_str)
         g['arity'] = len(g['args'])
 
-        print('// ->', line, '\n<-', g)
+        print(f'// line #{n}\n// proto {line}\n// parsed: {g}\n')
         return g
     else:
         print(f'WARNING: line {n}: could not parse prototype at all: "{line}"')
