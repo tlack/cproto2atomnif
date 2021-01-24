@@ -69,6 +69,7 @@ $ cat testlib.c
 
 # status
 
+- Rough, barbarian-style first draft
 - Supports only `int`, `float`, and `char*` (as beam binaries).
 - Very crude regular expression-based parser; should switch to `pyclanguage`
 - Would be cool to have more config options, or any config options.
