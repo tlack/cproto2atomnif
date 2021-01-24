@@ -75,6 +75,7 @@ $ cat testlib.c
 - Supports only `int` (of various kinds), `float`/`double`, and `char*`/`uint8_t*` (as beam binaries).
 - Very crude regular expression-based parser; should switch to `pyclanguage`
 - Would be cool to have more config options, or any config options.
+- Needs docs; see test.py for some ideas about what it supports
 
 # motivation
 
