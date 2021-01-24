@@ -46,7 +46,7 @@ $ cat testlib.c
         int b = (int)term_to_int(argv[1]);
         int func_result = add(a, b);
        
-				term atom_val = term_from_int32(func_result);
+	term atom_val = term_from_int32(func_result);
         VALIDATE_VALUE(atom_val, term_is_integer);
         return atom_val;
     }
